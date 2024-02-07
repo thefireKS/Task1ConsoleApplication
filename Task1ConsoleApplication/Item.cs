@@ -2,14 +2,21 @@
 {
     public abstract class Item
     {
-        public string name;
-        protected int currentQuantity;
-        protected int maxQuantity;
+        public abstract string name { get; set; }
+        public abstract int currentQuantity { get; set; }
+        protected abstract int maxQuantity { get; set; }
 
-        protected Item(string name, int currentQuantity, int maxQuantity) { }
-
-        protected Item(string name, int maxQuantity)
+        protected Item(string _name, int _currentQuantity, int _maxQuantity)
         {
+            name = _name;
+            currentQuantity = _currentQuantity;
+            maxQuantity = _maxQuantity;
+        }
+
+        protected Item(string _name, int _maxQuantity)
+        {
+            name = _name;
+            maxQuantity = _maxQuantity;
             currentQuantity = maxQuantity;
         }
 
