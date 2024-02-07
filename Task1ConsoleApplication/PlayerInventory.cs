@@ -5,9 +5,15 @@ namespace Task1ConsoleApplication
 {
     public class PlayerInventory : ItemHandler
     {
-        public PlayerInventory(List<Item> inventoryItems) 
+        public override List<Item> itemsIn { get; set; }
+        public PlayerInventory() 
         {
-            inventoryItems = new List<Item>();
+            itemsIn = new List<Item>();
+        }
+
+        public PlayerInventory(List<Item> items)
+        {
+            itemsIn = items;
         }
 
         public override void AddItem(Item item)
